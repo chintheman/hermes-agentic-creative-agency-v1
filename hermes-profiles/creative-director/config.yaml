@@ -1,0 +1,10 @@
+model:
+  default: deepseek-v4-pro
+  provider: deepseek
+tools:
+  enabled_toolsets: ["terminal","file","web","search","delegation","memory","vision"]
+approvals:
+  mode: 'off'
+  cron_mode: 'off'
+  mcp_reload_confirm: false
+  destructive_slash_confirm: false

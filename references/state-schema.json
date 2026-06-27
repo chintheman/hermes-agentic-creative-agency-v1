@@ -1,0 +1,94 @@
+{
+  "description": "Project State Schema — Hermes Agentic Creative Agency V1",
+  "version": "1.0.0",
+  "fields": {
+    "project": {
+      "id": "string (uuid)",
+      "name": "string",
+      "brand": "string (brand name)",
+      "brief": "string",
+      "format": "string (social|ad|video|web|deck|logo|copy|diagram)",
+      "audience": "string",
+      "deadline": "string (ISO datetime)",
+      "status": "string (ideation|briefing|in_progress|review|blocked|completed|cancelled)",
+      "current_stage": "integer (-1 to 5)",
+      "created_at": "string (ISO datetime)",
+      "updated_at": "string (ISO datetime)"
+    },
+    "state": {
+      "pipeline_progress": {
+        "stage_-1_complete": "boolean",
+        "stage_0_complete": "boolean",
+        "stage_1_complete": "boolean",
+        "stage_2_complete": "boolean",
+        "stage_3_complete": "boolean",
+        "stage_4_complete": "boolean",
+        "stage_5_complete": "boolean"
+      },
+      "current_sub_stage": "string (null|ideation|brief|delegation|copy|visual|review|delivery)",
+      "stage_2_output": {
+        "copy_block": "string",
+        "humanizer_applied": "boolean",
+        "brand_voice_verified": "boolean"
+      },
+      "stage_3_output": {
+        "visual_paths": ["array of file paths"],
+        "low_res_draft": "boolean",
+        "final_rendered": "boolean"
+      },
+      "stage_4_output": {
+        "image_critique_score": "number (1-10)",
+        "design_lint_verdict": "string (pass|warn|fail)",
+        "brand_check_score": "number (percentage)",
+        "critic_scores": {
+          "craft": "number (1-10)",
+          "coherence": "number (1-10)",
+          "brand_alignment": "number (1-10)",
+          "emotional_resonance": "number (1-10)",
+          "creative_ambition": "number (1-10)"
+        },
+        "gate_verdict": "string (ship|fix|revise|block)",
+        "review_notes": ["array of strings"]
+      }
+    },
+    "artifacts": {
+      "generated_files": [
+        {
+          "path": "string",
+          "type": "string (image|video|html|text|audio)",
+          "stage": "integer",
+          "version": "integer",
+          "timestamp": "string (ISO datetime)",
+          "previous_version_path": "string (null if first)"
+        }
+      ],
+      "current_version": "integer"
+    },
+    "feedback": {
+      "human_interventions": [
+        {
+          "stage": "integer",
+          "comment": "string",
+          "timestamp": "string (ISO datetime)",
+          "action": "string (override|correction|approval)"
+        }
+      ],
+      "structured_feedback": {
+        "likes": ["array of strings"],
+        "changes": ["array of strings"],
+        "direction_changes": ["array of strings"]
+      }
+    },
+    "cost_tracking": {
+      "api_calls": "integer",
+      "estimated_cost_usd": "number",
+      "model_breakdown": {
+        "deepseek_v4_pro": "integer (calls)",
+        "deepseek_v4_flash": "integer (calls)",
+        "claude_sonnet_4_6": "integer (calls)",
+        "image_generations": "integer",
+        "video_generations": "integer"
+      }
+    }
+  }
+}

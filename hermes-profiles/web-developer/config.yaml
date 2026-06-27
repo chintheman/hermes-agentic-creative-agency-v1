@@ -1,0 +1,10 @@
+model:
+  default: claude-sonnet-4-6
+  provider: anthropic
+tools:
+  enabled_toolsets: ["terminal","file","web"]
+approvals:
+  mode: 'off'
+  cron_mode: 'off'
+  mcp_reload_confirm: false
+  destructive_slash_confirm: false

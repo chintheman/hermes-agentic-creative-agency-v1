@@ -1,0 +1,32 @@
+{
+  "brand": "Default",
+  "version": "1.0.0",
+  "created": "2026-06-27",
+  "visual": {
+    "palette": {
+      "primary": "#1E3C78",
+      "secondary": "#C8A028",
+      "accent": "#FF6B6B",
+      "background": "#F5F1E8",
+      "text": "#10100F",
+      "neutrals": ["#F5F1E8", "#E8E0D0", "#C0B8A8", "#908878", "#605850", "#303028", "#10100F"]
+    },
+    "typography": {
+      "headings": { "family": "Inter", "weight": 700, "case": "sentence" },
+      "body": { "family": "Inter", "weight": 400, "size": "16px" },
+      "accent": { "family": "Inter", "weight": 600, "case": "uppercase" }
+    },
+    "spacing": { "unit": 8, "grid": "12-column" }
+  },
+  "voice": {
+    "tone": "professional-warm",
+    "adjectives": ["confident", "approachable", "expert", "human"],
+    "avoid": ["jargon", "hype", "superlatives", "corporate-speak"],
+    "principles": ["Clear over clever", "Evidence over assertion", "Human-scale language"]
+  },
+  "positioning": {
+    "audience": "General professional audience",
+    "differentiator": "Agentic creative excellence",
+    "mission": "Deliver exceptional creative work through AI agency"
+  }
+}
